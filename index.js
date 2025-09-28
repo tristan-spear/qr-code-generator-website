@@ -20,8 +20,8 @@ app.post("/link-submit", (req, res) => {
 
     QRCode.toFile('./public/qr-file.png', link, {
         color: {
-            dark: '#00F',  // Blue dots
-            light: '#0000' // Transparent background
+            dark: '#000000',  // Blue dots
+            light: '#ffffffff' // Transparent background
         }
         }, function (err) {
             if (err) throw err

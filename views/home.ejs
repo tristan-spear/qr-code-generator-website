@@ -2,14 +2,17 @@
 
 
 
-<main>
+<main class="container d-flex justify-content-center align-items-center" style="height: 700px;">
 
     <form action="/link-submit" method="POST" class="qr-code-form">
-        <div class="qr-code-input">
-            <label for="name">Enter URL: </label>
-            <input type="text" name="link" id="link" placeholder="https://" required />
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="qr-code-input">
+                <label for="name">Enter URL: </label>
+                <input type="text" name="link" id="link" placeholder="example.com" required />
+            </div>
+            <br />
+            <button type="submit">Generate</button>
         </div>
-        <button type="submit">Generate</button>
     </form>
 
 </main>

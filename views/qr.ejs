@@ -1,14 +1,15 @@
 <%- include("./partials/header.ejs") %>
 
-<main>
+<main class="container d-flex justify-content-center align-items-center" style="height: 700px;">
 
     <% if(locals.qrlink) { %>
-
-        <img src="./qr-file.png" />
-        <p> <%= qrlink %> </p>
-        <a href="./qr-file.png" download>Download</a>
-        <br />
-        <a href="/">Generate Another</a>
+        <div class="" style="">
+            <img src="./qr-file.png" />
+            <p> <%= qrlink %> </p>
+            <a href="./qr-file.png" download>Download</a>
+            <br />
+            <a href="/">Generate Another</a>
+        </div>
     <% } else { %>
     
     <% } %>
