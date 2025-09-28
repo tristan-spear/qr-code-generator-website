@@ -1,0 +1,18 @@
+<%- include("./partials/header.ejs") %>
+
+<main>
+
+    <% if(locals.qrlink) { %>
+
+        <img src="./qr-file.png" />
+        <p> <%= qrlink %> </p>
+        <a href="./qr-file.png" download>Download</a>
+        <br />
+        <a href="/">Generate Another</a>
+    <% } else { %>
+    
+    <% } %>
+
+</main>
+
+<%- include("./partials/footer.ejs") %>
