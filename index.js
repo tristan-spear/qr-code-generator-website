@@ -1,13 +1,20 @@
 import express from "express";
 import QRCode from 'qrcode';
 import bodyParser from "body-parser";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 
 const app = express();
 const port = 3000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.set("view engine", "ejs");
+app.set("views", join(__dirname, "views"));
 // app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
@@ -32,8 +39,8 @@ app.post("/link-submit", (req, res) => {
     res.render("qr.ejs", {qrlink : link}); 
 })
 
-// app.listen(port, () => {
-//   console.log(`Listening on port ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
 
-export default app;
+// export default app;
