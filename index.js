@@ -16,21 +16,45 @@ app.get("/", (req, res) => {
     res.render("home.ejs"); 
 });
 
-app.post("/link-submit", (req, res) => {
-    const link = req.body.link;
-    console.log(link);
+app.post("/link-submit", async (req, res) => {
 
-    QRCode.toFile('./public/qr-file.png', link, {
+    // Old Attempt : 
+
+    // const link = req.body.link;
+    // console.log(link);
+
+    // QRCode.toFile('./public/qr-file.png', link, {
+    //     color: {
+    //         dark: '#000000',  // Black dots
+    //         light: '#ffffffff' // Transparent background
+    //     }
+    //     }, function (err) {
+    //         if (err) throw err
+    //     console.log('done')
+    // })
+    // res.render("qr.ejs", {qrlink : link}); 
+
+    // Fixed version
+    const link = req.body.link;
+
+    var opts = {
+        errorCorrectionLevel: 'H',
+        type: 'image/jpeg',
+        quality: 0.3,
+        margin: 1,
         color: {
-            dark: '#000000',  // Black dots
-            light: '#ffffffff' // Transparent background
+            dark:"#000000ff",
+            light:"#ffffffff"
         }
-        }, function (err) {
-            if (err) throw err
-        console.log('done')
-    })
-    res.render("qr.ejs", {qrlink : link}); 
-})
+    }
+    try {
+        const qr = await QRCode.toDataURL(link, opts);
+        res.render("qr.ejs", { qrlink: link, qr_data: qr });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error generating QR code");
+    } 
+}); 
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

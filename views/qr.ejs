@@ -2,16 +2,16 @@
 
 <main class="container d-flex justify-content-center align-items-center" style="height: 700px;">
 
-    <% if(locals.qrlink) { %>
+    <% if(locals.qr_data) { %>
         <div class="" style="">
-            <img src="./qr-file.png" />
+            <img src="<%= qr_data %>" />
             <p> <%= qrlink %> </p>
-            <a href="./qr-file.png" download>Download</a>
+            <a href="<%= qr_data %>" download>Download</a>
             <br />
             <a href="/">Generate Another</a>
         </div>
     <% } else { %>
-    
+        <p>something is broken</p>
     <% } %>
 
 </main>
