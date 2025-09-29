@@ -1,8 +1,8 @@
 import express from "express";
 import QRCode from 'qrcode';
 import bodyParser from "body-parser";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
+// import { fileURLToPath } from "url";
+// import { dirname, join } from "path";
 
 const app = express();
 const port = 3000;
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.set("view engine", "ejs");
-app.set("views", join(__dirname, "views"));
+//app.set("views", join(__dirname, "views"));
 // app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
