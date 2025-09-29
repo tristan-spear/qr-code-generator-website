@@ -18,7 +18,7 @@ app.set("view engine", "ejs");
 // app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    res.render("home.ejs"); 
+    res.render("home"); 
 });
 
 app.post("/link-submit", (req, res) => {
@@ -34,12 +34,12 @@ app.post("/link-submit", (req, res) => {
             if (err) throw err
         console.log('done')
     })
-    res.render("qr.ejs", {qrlink : link}); 
+    res.render("qr", {qrlink : link}); 
 })
 
-// app.listen(port, () => {
-//   console.log(`Listening on port ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
 
-export default app;
+// export default app;
 
