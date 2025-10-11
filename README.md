@@ -1,1 +1,1 @@
-Check it out here: https://qr-generator-theta-rosy.vercel.app
+Check it out here: https://qr-code-generator-woad-rho.vercel.app
