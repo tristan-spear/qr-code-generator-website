@@ -18,22 +18,6 @@ app.get("/", (req, res) => {
 
 app.post("/link-submit", async (req, res) => {
 
-    // Old Attempt : 
-
-    // const link = req.body.link;
-    // console.log(link);
-
-    // QRCode.toFile('./public/qr-file.png', link, {
-    //     color: {
-    //         dark: '#000000',  // Black dots
-    //         light: '#ffffffff' // Transparent background
-    //     }
-    //     }, function (err) {
-    //         if (err) throw err
-    //     console.log('done')
-    // })
-    // res.render("qr.ejs", {qrlink : link}); 
-
     // Fixed version
     const link = req.body.link;
 

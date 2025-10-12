@@ -3,12 +3,12 @@
 <main class="container d-flex justify-content-center align-items-center" style="height: 700px;">
 
     <% if(locals.qr_data) { %>
-        <div class="" style="">
+        <div class="d-flex justify-content-center align-items-center flex-column mt-5">
             <img src="<%= qr_data %>" />
             <p> <%= qrlink %> </p>
-            <a href="<%= qr_data %>" download>Download</a>
+            <a href="<%= qr_data %>" style="background-color: rgb(83, 183, 217); color: white; border: 2px solid grey; margin-left: 5px; border-radius: 5px; padding: 5px; margin-bottom: 0px;" download>Download</a>
             <br />
-            <a href="/">Generate Another</a>
+            <a href="/" style="background-color: rgb(83, 183, 217); color: white; border: 2px solid grey; margin-left: 5px; border-radius: 5px; padding: 5px; margin-top: 0px;">Generate Another</a>
         </div>
     <% } else { %>
         <p>something is broken</p>
