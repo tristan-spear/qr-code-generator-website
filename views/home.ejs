@@ -6,15 +6,19 @@
 
     <form action="/link-submit" method="POST" class="qr-code-form">
         <div class="container d-flex justify-content-center align-items-center">
-            <div class="qr-code-input">
+            <!-- <div class="qr-code-input">
                 <label for="name">Enter URL: </label>
                 <input type="text" name="link" id="link" placeholder="example.com" required />
+            </div> -->
+            <div class="input-group">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Enter URL:</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="link" id="link" placeholder="example.com" required />
             </div>
-            <br />
-            <button type="submit" style="background-color: rgb(83, 183, 217); color: white; border: 2px solid grey; margin-left: 5px; border-radius: 5px;">Generate</button>
+            <!-- <button type="submit" style="background-color: rgb(83, 183, 217); color: white; border: 2px solid grey; margin-left: 5px; border-radius: 5px;">Generate</button> -->
+             <button type="submit" class="btn btn-info ms-2 text-white">Generate</button>
         </div>
     </form>
 
 </main>
 
-<%- include("./partials/footer.ejs") %>
+<%- include("./partials/footer.ejs") %> 
