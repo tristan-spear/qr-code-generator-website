@@ -1,9 +1,9 @@
 <%- include("./partials/header.ejs") %>
 
-<main class="container d-flex justify-content-center align-items-center" style="height: 700px;">
+<main class="container d-flex justify-content-center align-items-center" style="height: 700px; position: relative; z-index: 2;">
 
     <% if(locals.qr_data) { %>
-        <div class="d-flex justify-content-center align-items-center flex-column mt-5 bg-secondary rounded" style="width: 14rem; height: 20rem;">
+        <div class="d-flex justify-content-center align-items-center flex-column mt-5 rounded" style="width: 14rem; height: 20rem; background-color: rgba(206,206,206,.5);">
             <img src="<%= qr_data %>" class="rounded mt-2"/>
             <p class="text-white" style="overflow-wrap: break-word; "> <%= qrlink %> </p>
             <a href="<%= qr_data %>" class="btn btn-info text-white" style="width: 80%; height: 40px; margin-top: 20px;" download>Download  

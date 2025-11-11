@@ -7,9 +7,30 @@
 
     <link rel="stylesheet" href="/bootstrap-5.3.8-dist/css/bootstrap.min.css" />
     <link rel="icon" type="image/png" href="./qr-code-236.png" />
+
+    <style>
+    .transparent-input {
+        background: rgba(0, 0, 0, 0);  /* semi-transparent */
+        border: 1px solid rgba(255, 255, 255, 1);
+        color: #fff;
+        border-radius: 0.3rem;
+        transition: background 0.3s, border-color 0.3s;
+    }
+
+    .transparent-input::placeholder {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .transparent-input:focus {
+        background: rgba(0, 0, 0, 0);
+        border-color: #00bfff;
+        box-shadow: 0 0 8px #00bfff;
+        outline: none;
+    }
+    </style>
 </head>
 <html data-bs-theme="dark"></html>
-<body class="bg-dark">
+<body class="">
 
     <header class="d-flex justify-content-between align-items-center" style="background-color: black; color: white; height: 65px;">
         <div style="display: flex; justify-content: center; align-items: center;">
@@ -20,5 +41,23 @@
 
     </header>
     
+
+
+    <script src="three.r134.min.js"></script>
+    <script src="vanta.cells.min.js"></script>
+    <script>
+    VANTA.CELLS({
+    el: "body",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 1000.00,
+    minWidth: 1000.00,
+    scale: 1.00,
+    color1: 0x23ebeb,
+    color2: 0x2594e3,
+    size: 2.10
+    })
+    </script>
 </body>
 </html>
